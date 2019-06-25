@@ -460,54 +460,54 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
 ## S3 101
 
 ### S3
-  - S3-Simple Storage Service.
-  - Data is spread across multiple devices.
-  - Object-based storage.
-  - Files can be from 0 Bytes to 5 TB.
-  - Unlimited Storage.
-  - Files are stored in Buckets (folders).
+    - S3-Simple Storage Service.
+    - Data is spread across multiple devices.
+    - Object-based storage.
+    - Files can be from 0 Bytes to 5 TB.
+    - Unlimited Storage.
+    - Files are stored in Buckets (folders).
 
 ### S3 Objects
-  - S3 Object contains 1) Key 2) Value 3) VersionID 4) Metadata 5) Subresources
-  - Key - Name of the object.
-  - Value - Data, which is made of sequence of bytes.
-  - VersionID - Important for versioning
-  - Metadata - Data about data you are storing
-  - Subresources - Access Control List and Torrents
+    - S3 Object contains 1) Key 2) Value 3) VersionID 4) Metadata 5) Subresources
+    - Key - Name of the object.
+    - Value - Data, which is made of sequence of bytes.
+    - VersionID - Important for versioning
+    - Metadata - Data about data you are storing
+    - Subresources - Access Control List and Torrents
 
 ### S3 Data Consistency
-  - Read after Write Consistency for PUTS of new objects.
-  - Eventual Consistency for overwrite PUTS and DELETED (can take sometime to propagate)
+    - Read after Write Consistency for PUTS of new objects.
+    - Eventual Consistency for overwrite PUTS and DELETED (can take sometime to propagate)
 
 ### S3 Object Storage Classes
-  - S3 has Tiered Storage Available as below:
-    1. S3-Standard - Durability of 99.999999999% (remember 11x9s) and availability of 99.99%. Designed to sustain loss of 2 facilities concurrently.
-    2. S3-IA (Infrequently Accessed) - Less frequently, but requires rapid access when needed. Lower fee than S3, but charged a retrieval free.
-    3. S3 One Zone - IA - Lower cost option for S3-IA with no multiple availability zone.
-    4. S3-Intelligent Tiering - Designed to optimize costs. Automatically chooses cost-effective access tier with performance impact or operational overhead.
-    5. S3-Glacier - Low cost storage class for data archiving. Retrieval times configure from mins to hours.
-    6. S3-Glacier Deep Archive - Used where retrieval time of 12 hours is acceptable.
-  - OLD- S3-RRS (Reduced Redundancy Storage) - Durability and availability of 99.99%. Use when you don’t care if data is occasionally lost and can easily be re-created.
-  - OLD- Glacier - For archival only. Takes 3 - 5 hours to restore files. Durability of 99.999999999%.
-  ![S3 Comparison](s3_comparison.jpg)
-  - Charge on S3 are based on following ways:- storage, requests, storage management pricing, data transfer pricing, transfer acceleration, cross region replication pricing.
+    - S3 has Tiered Storage Available as below:
+      1. S3-Standard - Durability of 99.999999999% (remember 11x9s) and availability of 99.99%. Designed to sustain loss of 2 facilities concurrently.
+      2. S3-IA (Infrequently Accessed) - Less frequently, but requires rapid access when needed. Lower fee than S3, but charged a retrieval free.
+      3. S3 One Zone - IA - Lower cost option for S3-IA with no multiple availability zone.
+      4. S3-Intelligent Tiering - Designed to optimize costs. Automatically chooses cost-effective access tier with performance impact or operational overhead.
+      5. S3-Glacier - Low cost storage class for data archiving. Retrieval times configure from mins to hours.
+      6. S3-Glacier Deep Archive - Used where retrieval time of 12 hours is acceptable.
+    - OLD- S3-RRS (Reduced Redundancy Storage) - Durability and availability of 99.99%. Use when you don’t care if data is occasionally lost and can easily be re-created.
+    - OLD- Glacier - For archival only. Takes 3 - 5 hours to restore files. Durability of 99.999999999%.
+    ![S3 Comparison](s3_comparison.jpg)
+    - Charge on S3 are based on following ways:- storage, requests, storage management pricing, data transfer pricing, transfer acceleration, cross region replication pricing.
 
 
 ### S3 Buckets
-  - S3 Namespace is global. Region independent. Universal Namespace.
-  - Uploading file to S3 bucket will give HTTP 200 code, if upload is successful.
-  - Can turn ON MFA for delete.
-  - A bucket name in any region should only contain lower case characters. It has to be DNS Compliant
-  - Object versioning - Different versions of the same object in a bucket.
-  - Only Static website can be hosted. Auto scaling, Load Balancing etc. all managed automatically.
-  - You can tag buckets (or any AWS resoruce) to track costs. Tags consist of keys and (optional) value pairs.
-  - Lifecycle management of objects can be set. e.g. move to Glacier after 30 days
-  - Every bucket created, object uploaded is private by default.
-  - Object Permissions – Access to Object ACLs
-  - Prefix in bucket is a folder in the bucket.
-  - Minimum file size that I can store on S3 bucket is 0 byte.
-  - Max 100 S3 buckets per account by default.
-  - Individual Amazon S3 objects can range in size from a minimum of **0 bytes** to a maximum of **5 terabytes**. The largest object that can be uploaded in a single PUT is **5 gigabytes**. For objects larger than **100 megabytes**, customers should consider using the Multipart Upload capability.
+    - S3 Namespace is global. Region independent. Universal Namespace.
+    - Uploading file to S3 bucket will give HTTP 200 code, if upload is successful.
+    - Can turn ON MFA for delete.
+    - A bucket name in any region should only contain lower case characters. It has to be DNS Compliant
+    - Object versioning - Different versions of the same object in a bucket.
+    - Only Static website can be hosted. Auto scaling, Load Balancing etc. all managed automatically.
+    - You can tag buckets (or any AWS resoruce) to track costs. Tags consist of keys and (optional) value pairs.
+    - Lifecycle management of objects can be set. e.g. move to Glacier after 30 days
+    - Every bucket created, object uploaded is private by default.
+    - Object Permissions – Access to Object ACLs
+    - Prefix in bucket is a folder in the bucket.
+    - Minimum file size that I can store on S3 bucket is 0 byte.
+    - Max 100 S3 buckets per account by default.
+    - Individual Amazon S3 objects can range in size from a minimum of **0 bytes** to a maximum of **5 terabytes**. The largest object that can be uploaded in a single PUT is **5 gigabytes**. For objects larger than **100 megabytes**, customers should consider using the Multipart Upload capability.
 
 ## S3 Security & Encryption  
 ### Security  
@@ -528,31 +528,31 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
 
 
 ### S3 Versioning
-  - Once versioning is turned on it cannot be removed. It can only be suspended.
-  - To remove versioning, you have to create a new bucket and transfer all files from old to new
-  - For newer version of an object, you still have to set permissions to allow access. It is disabled by default even if previous version is public.
-  - All versions of the file add up to the storage. Hence for larger objects, ensure that there is some lifecycle versioning in place.
-  - Version deleted cannot be restored.
-  - Object deleted can be restored – Delete the Delete marker.
-  - Versioning is a good backup tool.
-  - For versioning. MFA can be setup for Delete capability for object / bucket – Complicated setup.
+    - Once versioning is turned on it cannot be removed. It can only be suspended.
+    - To remove versioning, you have to create a new bucket and transfer all files from old to new
+    - For newer version of an object, you still have to set permissions to allow access. It is disabled by default even if previous version is public.
+    - All versions of the file add up to the storage. Hence for larger objects, ensure that there is some lifecycle versioning in place.
+    - Version deleted cannot be restored.
+    - Object deleted can be restored – Delete the Delete marker.
+    - Versioning is a good backup tool.
+    - For versioning. MFA can be setup for Delete capability for object / bucket – Complicated setup.
 
 ## Cross Region Replication
-  - To allow for cross region replication, the both source and target buckets must have versioning enabled.
-  - Regions must be unique.
-  - Files in an existing bucket are not replicated automatically.
-  - All subsequent updated files will be replicated automatically.
-  - Delete markers are not replicated.
-  - Deleting individual versions or delete markers will not be replicated.
-  - OLD: Transitive replications do not work. E.g. if you setup bucket C to replicate content from bucket B which replicates content from bucket A – Changes made to bucket A will not get propagated to C. You will need to manually upload content to bucket B to trigger replication to C.
+    - To allow for cross region replication, the both source and target buckets must have versioning enabled.
+    - Regions must be unique.
+    - Files in an existing bucket are not replicated automatically.
+    - All subsequent updated files will be replicated automatically.
+    - Delete markers are not replicated.
+    - Deleting individual versions or delete markers will not be replicated.
+    - OLD: Transitive replications do not work. E.g. if you setup bucket C to replicate content from bucket B which replicates content from bucket A – Changes made to bucket A will not get propagated to C. You will need to manually upload content to bucket B to trigger replication to C.
 
 
 ## Lifecycle Management
-  - Use lifecycle rules to manage objects.
-  - We can configure  scope, transition and expiration of the object in lifecycle rules.
-  - Objects stored in Glacier incur minimum 90 day storage cost.
-  - Lifecycle management can be used in conjunction with versioning
-  - Can be applied to current versions and previous versions.
+    - Use lifecycle rules to manage objects.
+    - We can configure  scope, transition and expiration of the object in lifecycle rules.
+    - Objects stored in Glacier incur minimum 90 day storage cost.
+    - Lifecycle management can be used in conjunction with versioning
+    - Can be applied to current versions and previous versions.
 
 ## Transfer Acceleration
     - Uploads first to edge location, then from edge location to main S3 bucket directly.
@@ -560,18 +560,18 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
 
 ## CloudFront CDN Overview
 ### Important terms
-  - CDN – collection of distributed servers where the content is served to users based on the user’s location and the location of content origin.
-  - Edge location – location where content will be cached. Different from AWS Region / AZ
-  - Origin – Can be S3 Bucket, an EC2 Instance, an Elastic Load Balancer or Route53
-  - Distribution – is the name given to CDN collection which consists of Edge locations. There are two types of distribution:
-    1. Web Distribution – Typically used for websites & web content only.
-    2. RTMP – Used for Media Streaming. Adobe Flash media server’s protocol – video streaming.
-  - First request is slow as it comes from source origin. Subsequent requests improve speed as they are cached in nearest edge location and routed there until TTL expires.
-  - CloudFront also works with non AWS origin which can be on premise as well. .
-  - Edge locations are for read and write as well. Objects PUT on edge location are sent to origin
-  - Objects are cached for life of TTL(Time To Live). TTL can be set for 0 seconds to 365 days. Default TTL is 24 hours. If objects change more frequently update the TTL
-  - You can clear cached objects, with charges.
-  - OLD: Origin domain name – either S3 bucket, ELB or on premise domain
+    - CDN – collection of distributed servers where the content is served to users based on the user’s location and the location of content origin.
+    - Edge location – location where content will be cached. Different from AWS Region / AZ
+    - Origin – Can be S3 Bucket, an EC2 Instance, an Elastic Load Balancer or Route53
+    - Distribution – is the name given to CDN collection which consists of Edge locations. There are two types of distribution:
+      1. Web Distribution – Typically used for websites & web content only.
+      2. RTMP – Used for Media Streaming. Adobe Flash media server’s protocol – video streaming.
+    - First request is slow as it comes from source origin. Subsequent requests improve speed as they are cached in nearest edge location and routed there until TTL expires.
+    - CloudFront also works with non AWS origin which can be on premise as well. .
+    - Edge locations are for read and write as well. Objects PUT on edge location are sent to origin
+    - Objects are cached for life of TTL(Time To Live). TTL can be set for 0 seconds to 365 days. Default TTL is 24 hours. If objects change more frequently update the TTL
+    - You can clear cached objects, with charges.
+    - OLD: Origin domain name – either S3 bucket, ELB or on premise domain
 
 ### CloudFront Security.
 
