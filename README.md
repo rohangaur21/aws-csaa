@@ -481,12 +481,12 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
 
 ### S3 Object Storage Classes
   - S3 has Tiered Storage Available as belows: 
-   1. S3-Standard - Durability of 99.999999999% (remember 11x9s) and availability of 99.99%. Designed to sustain loss of 2 facilities concurrently.
-   2. S3-IA (Infrequently Accessed) - Less frequently, but requires rapid access when needed. Lower fee than S3, but charged a retrieval free.
-   3. S3 One Zone - IA - Lower cost option for S3-IA with no multiple availability zone.
-   4. S3-Intelligent Tiering - Designed to optimize costs. Automatically chooses cost-effective access tier with performance impact or operational overhead.
-   5. S3-Glacier - Low cost storage class for data archiving. Retrieval times configure from mins to hours.
-   6. S3-Glacier Deep Archive - Used where retrieval time of 12 hours is acceptable.
+  - 1. S3-Standard - Durability of 99.999999999% (remember 11x9s) and availability of 99.99%. Designed to sustain loss of 2 facilities concurrently.
+  - 2. S3-IA (Infrequently Accessed) - Less frequently, but requires rapid access when needed. Lower fee than S3, but charged a retrieval free.
+  - 3. S3 One Zone - IA - Lower cost option for S3-IA with no multiple availability zone.
+  - 4. S3-Intelligent Tiering - Designed to optimize costs. Automatically chooses cost-effective access tier with performance impact or operational overhead.
+  - 5. S3-Glacier - Low cost storage class for data archiving. Retrieval times configure from mins to hours.
+  - 6. S3-Glacier Deep Archive - Used where retrieval time of 12 hours is acceptable.
   - OLD- S3-RRS (Reduced Redundancy Storage) - Durability and availability of 99.99%. Use when you don’t care if data is occasionally lost and can easily be re-created.
   - OLD- Glacier - For archival only. Takes 3 - 5 hours to restore files. Durability of 99.999999999%.
 
