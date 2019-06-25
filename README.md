@@ -557,6 +557,8 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
 ## Transfer Acceleration
   - Uploads first to edge location, then from edge location to main S3 bucket directly.
   - S3 Transfer Acceleration Tool can be used to compare the speed of the transfer (Edge Transfer Vs S3 directly).
+  - It utilizes the CloudFront Edge Network to accelerate uploads to S3. Instead of uploading directly to S3, you can use a distinct URL to upload directly to an edge location which will then transfer to S3 using Amazon’s backbone network.
+  - The farther you are from S3 bucket region the higher is the improvement you can observe using S3 Transfer Acceleration. High cost for usage than standard S3 transfer rates.
 
 ## CloudFront CDN Overview
 ### Important terms
@@ -587,6 +589,32 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
   - You can force users to get content via CloudFront after removing read access to S3 bucket.
   - You can also upload content to CloudFront.
 
+## Snowball
+  Next version of Import / Export Gateway
+  You could accelerate moving large amounts of data into and out of AWS using portable storage devices for transport. Ship the storage device – no need to transfer over the internet.  Problem arose with different types of disks
+
+### Snowball Standard
+  - Bigger than briefcase sized storage devices
+  - Petabyte scale data transport solution used to transfer data in/out of AWS
+  - Cost is 1/5th as compared to transfer via high speed internet.
+  - 50TB or 80TB snowball available.
+  - Multiple layers of security to protect data. Tamper resistant enclosure, 256-bit encryption & Standard Trusted Platform Module (TPM)
+  - Once data is transferred, AWS performs software erasure of Snowball appliance.
+
+### Snowball Edge
+  - 100 TB data transfer device which has onboard storage and compute capabilities.
+  - Move large amounts of data in and out of AWS, as a temporary storage tier for large local datasets.
+  - You can run Lambda functions.
+  - Devices connect to existing applications and infrastructure using standard storage interfaces.
+  - Snowball Edges can be clustered together to process your data on premise even when not able to access cloud.
+
+### Snowmobile
+  - Massive 45 foot long ruggedized shipping container, pulled by a truck.
+  - Petabyte or Exabyte of data that has to be transferred to AWS. 100 PB per snowmobile.
+  - You can use it for data center migration.
+  Using snowball – Import / Export S3. If using Glacier first need to import into S3 and then into Snowball.
+  ![Snowball Speed Comparison](snowball.jpg)
+
 ## Storage Gateway
 
   - It is a service which connects an on-premises software appliance (virtual) with cloud based storage to provide seamless and secure connectivity between the two. Either via internet or Direct connect.
@@ -599,7 +627,7 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
 
   - 4 Types of Storage Gateways.
 
- 1.[Brand New] *File Gateway (NFS) – Just store files in S3 – Word, Pictures, PDFs, and no OS. ( Saves a lot of money)
+ 1.[Brand New] File Gateway (NFS) – Just store files in S3 – Word, Pictures, PDFs, and no OS. ( Saves a lot of money)
   -Files are stored as objects in S3 buckets and accessed over NFS mount point
   -File attributes as stored as S3 object metadata.
   -Once transferred to S3, standard S3 features apply to all files.
@@ -612,41 +640,7 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
 
  3.Gateway Virtual Tape Library (VTL) – Backup and Archiving solution. Create tapes and send to S3. You can use existing backup applications like NetBackup, Backup Exec, and Veam etc.
 
-## Snowball
 
-Next version of Import / Export Gateway
-
-You could accelerate moving large amounts of data into and out of AWS using portable storage devices for transport. Ship the storage device – no need to transfer over the internet.  Problem arose with different types of disks
-
-### Snowball Standard
-  - Bigger than briefcase sized storage devices
-  - Petabyte scale data transport solution used to transfer data in/out of AWS
-  - Cost is 1/5th as compared to transfer via high speed internet.
-  - 80TB snowball available.
-  - Multiple layers of security to protect data. Tamper resistant enclosure, 256-bit encryption
-  - Once data is transferred, AWS performs software erasure of Snowball appliance.
-
-
-### Snowball Edge
-  - 100 TB data transfer device which has onboard storage and compute capabilities.
-  - Move large amounts of data in and out of AWS, as a temporary storage tier for large local datasets.
-  - You can run Lambda functions.
-  - Devices connect to existing applications and infrastructure using standard storage interfaces.
-  - Snowball Edges can be clustered together to process your data on premise
-
-
-### Snowmobile
-  - Massive 45 foot long ruggedized shipping container, pulled by a truck.
-  - Petabyte or Exabyte of data that has to be transferred to AWS. 100 PB per snowmobile.
-  - You can use it for data center migration.
-
-Using snowball – Import / Export S3. If using Glacier first need to import into S3 and then into Snowball.
-
-## S3 Transfer Acceleration
-
-It utilizes the CloudFront Edge Network to accelerate uploads to S3. Instead of uploading directly to S3, you can use a distinct URL to upload directly to an edge location which will then transfer to S3 using Amazon’s backbone network.
-
-The farther you are from S3 bucket region the higher is the improvement you can observe using S3 Transfer Acceleration. High cost for usage than standard S3 transfer rates.
 
 # EC2 – The Backbone of AWS
 
