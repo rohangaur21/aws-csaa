@@ -460,27 +460,31 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
 ## S3 101
 
 ### S3 
-
   - S3-Simple Storage Service.
-  
   - Data is spread across multiple devices.
-  
   - Object-based storage.
-  
   - Files can be from 0 Bytes to 5 TB.
-  
   - Unlimited Storage.
-  
   - Files are stored in Buckets (folders).
+  
+### S3 Objects
+  - S3 Object contains 1) Key 2) Value 3) VersionID 4) Metadata 5) Subresources
+  - Key - Name of the object.
+  - Value - Data, which is made of sequence of bytes.
+  - VersionID - Important for versioning
+  - Metadata - Data about data you are storing
+  - Subresources - Access Control List and Torrents
+  
+### S3 Data Consistency
+  - Read after Write Consistency for PUTS of new objects.
+  - Eventual Consistency for overwrite PUTS and DELETED (can take sometime to propagate)
 
 ### S3 Object Storage Classes
-
-  - S3-Standard - Durability of 99.999999999% and availability of 99.99%.
-
-  - S3-IA (Infrequently Accessed) - Durability of 99.999999999% and availability of 99.9%.
-
+  - S3 has Tiered Storage Available as belows: 
+  - 1.  S3-Standard - Durability of 99.999999999% (remember 11x9s) and availability of 99.99%. Designed to sustain loss of 2 facilities concurrently.
+  - 2.  S3-IA (Infrequently Accessed) - Less frequently, but requires rapid access when needed. Lower fee than S3, but charged a retrieval free.
+  - 3.  S3 One Zone - IA - Lower cost option for S3-IA with no multiple availability zone.
   - S3-RRS (Reduced Redundancy Storage) - Durability and availability of 99.99%. Use when you don’t care if data is occasionally lost and can easily be re-created.
-  
   - Glacier - For archival only. Takes 3 - 5 hours to restore files. Durability of 99.999999999%.
 
 ### S3 Buckets
