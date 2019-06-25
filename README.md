@@ -458,6 +458,20 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
 
 ## S3 101
 
+### S3 
+
+  - S3-Simple Storage Service.
+  
+  - Data is spread across multiple devices.
+  
+  - Object-based storage.
+  
+  - Files can be from 0 Bytes to 5 TB.
+  
+  - Unlimited Storage.
+  
+  - Files are stored in Buckets (folders).
+
 ### S3 Object Storage Classes
 
   - S3-Standard - Durability of 99.999999999% and availability of 99.99%.
@@ -470,7 +484,9 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
 
 ### S3 Buckets
 
-  - S3 Namespace is global. Region independent.
+  - S3 Namespace is global. Region independent. Universal Namespace.
+  
+  - Uploading file to S3 bucket will give HTTP 200 code, if upload is successful.
 
   - A bucket name in any region should only contain lower case characters. It has to be DNS Compliant
 
