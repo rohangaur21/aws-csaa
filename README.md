@@ -489,7 +489,7 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
   - 6. S3-Glacier Deep Archive - Used where retrieval time of 12 hours is acceptable.
   - OLD- S3-RRS (Reduced Redundancy Storage) - Durability and availability of 99.99%. Use when you don’t care if data is occasionally lost and can easily be re-created.
   - OLD- Glacier - For archival only. Takes 3 - 5 hours to restore files. Durability of 99.999999999%.
-  ![S3 Comparison](s3_comparison.jpg)![AWS- CSA Associate Logo](aws-csa-associate.png)
+  ![S3 Comparison](s3_comparison.jpg)
 
 ### S3 Buckets
 
