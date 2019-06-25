@@ -113,7 +113,7 @@ Table of Contents
       * [Storage Options in the Cloud](#storage-options-in-the-cloud)                                                                   
       * [Architecting for AWS Cloud - Best Practices](#architecting-for-aws-cloud---best-practices)                                     
       * [Exam Practicalities](#exam-practicalities)                                                                                     
-   * [Well Architected Framework](#well-architected-framework) 
+   * [Well Architected Framework](#well-architected-framework)
       * [Design Principles](#design-principles)                                                                                       
       * [Security Areas](#security-areas)                                                                                             
       * [Best Practices](#best-practices)                                                                                             
@@ -152,7 +152,7 @@ Table of Contents
       * [SWF](#swf)                                                                                                                     
       * [Classic Load Balancer](#classic-load-balancer)                                                                                 
    * [Quiz Questions – Tricky ones.](#quiz-questions--tricky-ones)                                                                     
-   * [Review These Links](#review-these-links) 
+   * [Review These Links](#review-these-links)
    * [Technical Concepts](#technical-concepts)                                                                                                                                                                                                                     
 
 ## Exam Blueprint
@@ -459,14 +459,14 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
 
 ## S3 101
 
-### S3 
+### S3
   - S3-Simple Storage Service.
   - Data is spread across multiple devices.
   - Object-based storage.
   - Files can be from 0 Bytes to 5 TB.
   - Unlimited Storage.
   - Files are stored in Buckets (folders).
-  
+
 ### S3 Objects
   - S3 Object contains 1) Key 2) Value 3) VersionID 4) Metadata 5) Subresources
   - Key - Name of the object.
@@ -474,13 +474,13 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
   - VersionID - Important for versioning
   - Metadata - Data about data you are storing
   - Subresources - Access Control List and Torrents
-  
+
 ### S3 Data Consistency
   - Read after Write Consistency for PUTS of new objects.
   - Eventual Consistency for overwrite PUTS and DELETED (can take sometime to propagate)
 
 ### S3 Object Storage Classes
-  - S3 has Tiered Storage Available as belows: 
+  - S3 has Tiered Storage Available as below:
   - 1. S3-Standard - Durability of 99.999999999% (remember 11x9s) and availability of 99.99%. Designed to sustain loss of 2 facilities concurrently.
   - 2. S3-IA (Infrequently Accessed) - Less frequently, but requires rapid access when needed. Lower fee than S3, but charged a retrieval free.
   - 3. S3 One Zone - IA - Lower cost option for S3-IA with no multiple availability zone.
@@ -489,12 +489,12 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
   - 6. S3-Glacier Deep Archive - Used where retrieval time of 12 hours is acceptable.
   - OLD- S3-RRS (Reduced Redundancy Storage) - Durability and availability of 99.99%. Use when you don’t care if data is occasionally lost and can easily be re-created.
   - OLD- Glacier - For archival only. Takes 3 - 5 hours to restore files. Durability of 99.999999999%.
-  [S3 Comparison](s3_comparison.jpg)
+  ![S3 Comparison](s3_comparison.jpg)![AWS- CSA Associate Logo](aws-csa-associate.png)
 
 ### S3 Buckets
 
   - S3 Namespace is global. Region independent. Universal Namespace.
-  
+
   - Uploading file to S3 bucket will give HTTP 200 code, if upload is successful.
 
   - A bucket name in any region should only contain lower case characters. It has to be DNS Compliant
@@ -1488,7 +1488,7 @@ To use AWS Stencils download them at the [AWS Simple Icons for Architecture Diag
 
 ## Network ACLs & Security Groups
 |Security Group| Network ACL|
-|-------------|-------------| 
+|-------------|-------------|
 |Operates at the instance level (first layer of defense)| Operates at the subnet level (second layer of defense)|
 |Supports allow rules only| Supports allow rules and deny rules|
 |Is stateful: Return traffic is automatically allowed, regardless of any rules| Is stateless: Return traffic must be explicitly allowed by rules|
@@ -1653,7 +1653,7 @@ EC2 instances pull SQS messages from a standard SQS queue on a FIFO (First In Fi
         - Data consumers (EC2 instances) analyze the stream and then derive results/take next actions.
         - Data capacity of stream is a function of the number of shards you specify for the stream.
 
-  - Kinesis Firehose 
+  - Kinesis Firehose
 
       - Don’t have to worry about shards, streams – completely automated.
       - No automatic data retention window. Data is either immediately analyzed or sent to S3 and then to Redshift, elastic search cluster
