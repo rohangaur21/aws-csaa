@@ -509,16 +509,22 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
   - Max 100 S3 buckets per account by default.
   - Individual Amazon S3 objects can range in size from a minimum of **0 bytes** to a maximum of **5 terabytes**. The largest object that can be uploaded in a single PUT is **5 gigabytes**. For objects larger than **100 megabytes**, customers should consider using the Multipart Upload capability.
 
-### S3 Security And Encryption
-  - By default, its bucket are private.
-  - Can setup access control using Bucket Policies & Access Control Lists.
-  - Can be configured to create access logs, which can be sent to another bucket or another bucket of another account.
-  - Encryption in Transit can be achieved by SSL/TLS.
-  - Encryption At Rest on Server-Side :
-    1. S3 managed key -SSE-S3
-    2. AWS Key Management Service, Managed Keys - SSE-KMS
-    3. Server Side Encrption with Customer provided Keys - SSE-C
-  - Encryption At Rest on Client-Side
+## S3 Security & Encryption  
+### Security  
+    - By default all newly created buckets are Private  
+    - Control Access to buckets using  
+        - Bucket Policies – bucket wide.  
+        - Access Control Lists – up to individual objects.  
+    - S3 buckets can log all access requests to another S3 bucket even another AWS account.  
+### Encryption  
+    - In Transit : Secured using SSL/TLS  
+    - Data at rest
+      - Server Side  
+        1. S3 Managed Keys – SSE – S3  
+        2. AWS KMS Managed Keys – SSE – KMS – Envelop Key. Provides audit trail  
+        3. SSE using customer provided keys. Key Management is responsibility of user. SSE-C
+      - Client Side
+        Encrypt data at client side and then upload to S3.
 
 
 ### S3 Versioning
@@ -548,33 +554,24 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
   - Lifecycle management can be used in conjunction with versioning
   - Can be applied to current versions and previous versions.
 
+## Transfer Acceleration
+    - Uploads first to edge location, then from edge location to main S3 bucket directly.
+    - S3 Transfer Acceleration Tool can be used to compare the speed of the transfer (Edge Transfer Vs S3 directly).
+
 ## CloudFront CDN Overview
-
 ### Important terms
-
   - CDN – collection of distributed servers where the content is served to users based on the user’s location and the location of content origin.
-
   - Edge location – location where content will be cached. Different from AWS Region / AZ
-
   - Origin – Can be S3 Bucket, an EC2 Instance, an Elastic Load Balancer or Route53
-
-  - Distribution – is the name given to CDN collection which consists of Edge locations.
-
-  - Web Distribution – Typically used for websites & web content only.
-
-  - RTMP – Used for Media Streaming. Adobe Flash media server’s protocol – video streaming.
-
+  - Distribution – is the name given to CDN collection which consists of Edge locations. There are two types of distribution:
+    1. Web Distribution – Typically used for websites & web content only.
+    2. RTMP – Used for Media Streaming. Adobe Flash media server’s protocol – video streaming.
   - First request is slow as it comes from source origin. Subsequent requests improve speed as they are cached in nearest edge location and routed there until TTL expires.
-
   - CloudFront also works with non AWS origin which can be on premise as well. .
-
   - Edge locations are for read and write as well. Objects PUT on edge location are sent to origin
-
-  - Objects are cached for life of TTL. TTL can be set for 0 seconds to 365 days. Default TTL is 24 hours. If objects change more frequently update the TTL
-
+  - Objects are cached for life of TTL(Time To Live). TTL can be set for 0 seconds to 365 days. Default TTL is 24 hours. If objects change more frequently update the TTL
   - You can clear cached objects, with charges.
-
-  - Origin domain name – either S3 bucket, ELB or on premise domain
+  - OLD: Origin domain name – either S3 bucket, ELB or on premise domain
 
 ### CloudFront Security.
 
@@ -602,39 +599,7 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
 
   - You can also upload content to CloudFront.
 
-## S3 Security & Encryption
 
-### Security
-
-  - By default all newly created buckets are Private
-
-  - Control Access to buckets using
-
-      - Bucket Policies – bucket wide.
-
-      - Access Control Lists – up to individual objects.
-
-  - S3 buckets can log all access requests to another S3 bucket even another AWS account.
-
-### Encryption
-
-  - In Transit
-
-Secured using SSL/TLS
-
-  - Data at rest
-
-1. Server Side
-
-    1. S3 Managed Keys – SSE – S3
-
-    2. AWS KMS Managed Keys – SSE – KMS – Envelop Key. Provides audit trail
-
-    3. SSE using customer provided keys. Key Management is responsibility of user. SSE-C
-
-2. Client Side
-
-Encrypt data at client side and then upload to S3.
 
 ## Storage Gateway
 
