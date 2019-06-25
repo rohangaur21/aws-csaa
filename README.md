@@ -490,13 +490,13 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
   - OLD- S3-RRS (Reduced Redundancy Storage) - Durability and availability of 99.99%. Use when you don’t care if data is occasionally lost and can easily be re-created.
   - OLD- Glacier - For archival only. Takes 3 - 5 hours to restore files. Durability of 99.999999999%.
   ![S3 Comparison](s3_comparison.jpg)
+  - Charge on S3 are based on following ways:- storage, requests, storage management pricing, data transfer pricing, transfer acceleration, cross region replication pricing.
+
 
 ### S3 Buckets
-
   - S3 Namespace is global. Region independent. Universal Namespace.
-
   - Uploading file to S3 bucket will give HTTP 200 code, if upload is successful.
-
+ - Can turn ON MFA for delete. 
   - A bucket name in any region should only contain lower case characters. It has to be DNS Compliant
 
   - Object versioning - Different versions of the same object in a bucket.
