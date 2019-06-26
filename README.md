@@ -613,8 +613,22 @@ CloudFront is optimized to work with other Amazon Web Services like S3, EC2, Ela
 | 13 | A1 | Arm-based workloads | Scale-out workloads such as web servers |
 | 14 | U-6tb1 | Bare Metal | Bare metal capabilities that eliminate virtualization overhead |
 
-Acronym – *DIRT MCG FPX*  -
-*D – Density , I  - IOPS , R – RAM , T – cheap T2, M – Main Choice ( default) – Apps, C – Compute,  G – Graphics, F – FPGA , P – Graphics – Pics – Parallel Processing , X – Extreme Memory*  - *
+**How to remember EC2 instance types F.I.G.H.T.D.R.M.C.P.X.Z.A.U.**
+  - **_F_** - FGPA
+  - **_I_** - IOPS
+  - **_G_** - Graphics
+  - **_H_** - High Disk Throughput
+  - **_T_** - Cheap General Purpose (think T2 Micro)
+  - **_D_** - Density
+  - **_R_** - Ram
+  - **_M_** - Main choice for general purpose applications
+  - **_C_** - Compute
+  - **_P_** - Graphics(Pics)
+  - **_X_** - Extreme Memory
+  - **_Z_** - Extreme Memory and CPU
+  - **_A_** - Arm-based workloads
+  - **_U_** - Bare Metal
+
 - Use M3 for general purpose instances – balanced compute, memory and network resources
 - [Exam Tip] You will be asked to provide which instance type to use for a given scenario. Usually 3 options are fictitious.
 - EC2 Key Pairs are region specific
