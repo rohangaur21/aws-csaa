@@ -294,8 +294,9 @@ The exam is approximately 60 questions in 80 minutes. Pass marks not advertised 
       - SES – send email via AWS
 
 # Identity & Access Management
-Allow you to manage users and their level of access management to the AWS console. Tested for exam and co. aws account in real life. IAM is globally available and not specified to region
 ## IAM 101
+Allow you to manage users and their level of access management to the AWS console. Tested for exam and co. aws account in real life. IAM is globally available and not specified to region
+### Usages
  - Configure who uses AWS and their level of access to the AWS Console.
  - Centralized control over AWS Account
  - Share access for AWS Account
@@ -334,16 +335,16 @@ IAM consists of the following
 
 # AWS Object Storage & CDN – S3, Glacier and CloudFront
 ## S3 101
-S3 is a safe place to store your static files being one the oldest services of AWS. It is an object based storage where your data is spread across multiple devices.
+    S3 is a safe place to store your static files being one the oldest services of AWS. It is an object based storage where your data is spread across multiple devices.
+    S3 allows you to upload, where files can be from 0 bytes to 5TB. If an upload is successful, you will receive an HTTP status code of `200`.
+    It is capable of unlimited storage. All files are stored into 'Buckets' which is basically an S3 term for folders.
+    S3 uses a universal namespace meaning all names must be **_globally_** unique.
+    _Example S3 URL:_
+    **`https://s3-eu-west-1.amazonaws.com/[bucket-name]`**
 
-S3 allows you to upload, where files can be from 0 bytes to 5TB. If an upload is successful, you will receive an HTTP status code of `200`.
-It is capable of unlimited storage. All files are stored into 'Buckets' which is basically an S3 term for folders.
-
-S3 uses a universal namespace meaning all names must be **_globally_** unique.
-
-_Example S3 URL:_
-**`https://s3-eu-west-1.amazonaws.com/[bucket-name]`**
-
+### S3 Data Consistency
+    S3 maintains **_Read After Write_** consistency for PUTS of new objects. Meaning, as soon a new object is uploaded or written, it is available to read/view.
+    When performing overwrite PUTS and DELETES, these updated and/or deleted objects can take time to propagate because, also known as **_Eventual Consistency_**. These type of updates are known as **_Atomic_** - fetching these resources could be old or new.
 ### S3
   - S3-Simple Storage Service.
   - Data is spread across multiple devices.
@@ -352,17 +353,16 @@ _Example S3 URL:_
   - Unlimited Storage.
   - Files are stored in Buckets (folders).
 
-### S3 Objects
-  - S3 Object contains 1) Key 2) Value 3) VersionID 4) Metadata 5) Subresources
-  - Key - Name of the object.
-  - Value - Data, which is made of sequence of bytes.
-  - VersionID - Important for versioning
-  - Metadata - Data about data you are storing
-  - Subresources - Access Control List and Torrents
+### S3 Object - Key, Value Store
+- Key - Name of object to be stored
+- Value - Data being stored - made up of a sequence of bytes
+- Version ID - Version signifier
+- Metadata - Data about the data you are storing - date stored, size,
+- Subresource
+    - Access Control Lists
+    - Torrents
 
-### S3 Data Consistency
-  - Read after Write Consistency for PUTS of new objects.
-  - Eventual Consistency for overwrite PUTS and DELETED (can take sometime to propagate)
+
 
 ### S3 Object Storage Classes
   - S3 has Tiered Storage Available as below:
