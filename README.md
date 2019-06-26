@@ -324,12 +324,12 @@ IAM consists of the following
  - IAM Password policy can be set to access the admin console.
  - New users have no permissions when first created. Everything has to be explicitly added.
  - Power User Access allows Access to all AWS services except the management of groups and users within IAM.
-Manage AWS resources via
-1. Management console – Using username and password
-2. Rest APIs – Using Access Key ID and Secret Access Key
-3. AWS CLI - Using Access Key ID and Secret Access Key
-4. AWS SDK – various programming languages supported.
-Using Access Key ID and Secret Access Key – can be used only via accessing programmatically. Akin to username and password used while accessing the console
+- Manage AWS resources via
+  1. Management console – Using username and password
+  2. Rest APIs – Using Access Key ID and Secret Access Key
+  3. AWS CLI - Using Access Key ID and Secret Access Key
+  4. AWS SDK – various programming languages supported.
+  - Using Access Key ID and Secret Access Key – can be used only via accessing programmatically. Akin to username and password used while accessing the console
 
 # AWS Object Storage & CDN – S3, Glacier and CloudFront
 
