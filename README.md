@@ -335,16 +335,17 @@ IAM consists of the following
 
 # AWS Object Storage & CDN – S3, Glacier and CloudFront
 ## S3 101
-    S3 is a safe place to store your static files being one the oldest services of AWS. It is an object based storage where your data is spread across multiple devices.
-    S3 allows you to upload, where files can be from 0 bytes to 5TB. If an upload is successful, you will receive an HTTP status code of `200`.
-    It is capable of unlimited storage. All files are stored into 'Buckets' which is basically an S3 term for folders.
-    S3 uses a universal namespace meaning all names must be **_globally_** unique.
-    _Example S3 URL:_
-    **`https://s3-eu-west-1.amazonaws.com/[bucket-name]`**
+S3 is a safe place to store your static files being one the oldest services of AWS. It is an object based storage where your data is spread across multiple devices.
+S3 allows you to upload, where files can be from 0 bytes to 5TB. If an upload is successful, you will receive an HTTP status code of `200`.
+It is capable of unlimited storage. All files are stored into 'Buckets' which is basically an S3 term for folders.
+S3 uses a universal namespace meaning all names must be **_globally_** unique.
+_Example S3 URL:_
+**`https://s3-eu-west-1.amazonaws.com/[bucket-name]`**
 
 ### S3 Data Consistency
-    S3 maintains **_Read After Write_** consistency for PUTS of new objects. Meaning, as soon a new object is uploaded or written, it is available to read/view.
-    When performing overwrite PUTS and DELETES, these updated and/or deleted objects can take time to propagate because, also known as **_Eventual Consistency_**. These type of updates are known as **_Atomic_** - fetching these resources could be old or new.
+S3 maintains **_Read After Write_** consistency for PUTS of new objects. Meaning, as soon a new object is uploaded or written, it is available to read/view.
+When performing overwrite PUTS and DELETES, these updated and/or deleted objects can take time to propagate because, also known as **_Eventual Consistency_**. These type of updates are known as **_Atomic_** - fetching these resources could be old or new.
+
 ### S3
   - S3-Simple Storage Service.
   - Data is spread across multiple devices.
