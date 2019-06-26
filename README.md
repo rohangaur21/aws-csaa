@@ -621,7 +621,7 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
   - The virtual appliance will asynchronously replicate information up to S3 or Glacier
   - Can be downloaded as a VM – VMware ESXi / Hyper-V.
   - 3 Types of Storage Gateways.
-    1.  File Gateway (NFS) – Just store files in S3 – Word, Pictures, PDFs, and no OS. ( Saves a lot of money)
+    1.  File Gateway (NFS) – For flat files. Just store files in S3 – Word, Pictures, PDFs, and no OS. ( Saves a lot of money)
         - Files are stored as objects in S3 buckets and accessed over NFS mount point
         - File attributes as stored as S3 object metadata.
         - Once transferred to S3, standard S3 features apply to all files.
