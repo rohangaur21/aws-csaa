@@ -388,9 +388,9 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
 - **S3 Glacier Deep Archive**
     -  Used where retrieval time of 12 hours is acceptable.
 - **Previous in 2018**
-    - *S3 Reduces Redundancy Storage (RRS)*
+    -- *S3 Reduces Redundancy Storage (RRS)*
     	 - Designed to provide 99.99% durability and 99.99% availability of objects over a given year.
-    - *Glacier (Separate product from S3)*
+    -- *Glacier (Separate product from S3)*
       	- Very cost effective but used for data archival only
       	- Generally takes 3 - 5 hours to restore from glacier
           - Stores data for as low as .01G a month
