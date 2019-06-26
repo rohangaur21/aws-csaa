@@ -511,22 +511,28 @@ IAM consists of the following
 
 ### EC2 Pricing
  - On demand.
- - Pay per hour of usage.
- - Applications with short term, spiky usage patterns or unpredictable workloads that cannot be interrupted.
- - New apps on AWS
+     - Pay per hour of usage.
+     - Flexible without any up-front payment or long term commitment.
+     - Applications with short term, spiky usage patterns or unpredictable workloads that cannot be interrupted.
+     - New apps on AWS
  - Reserved pricing
- - Reserve capacity over significant period of time. Significant discount.
- - Applications with steady or predictable usage over a period of time. Reserved capacity required.
- - Further discount if upfront payment
+     - Reserve capacity over significant period of time. Significant discount.
+     - Applications with steady or predictable usage over a period of time. Reserved capacity required.
+     - Further discount if upfront payment
+     - Contract Terms are 1 Year or 3 Years terms,
+     - Types of reserved pricing:
+        1.  Standard Reserved Instances - Upto 75% discount - more use discount on paying upfront and longer contracts
+        2. Convertible Reserved instances - Upto 54% discount - allow to change between instances type.
+        3. Scheduled Reserved instance - Allow for launch for time window
  - Spot pricing –
- - Bid your price for compute. When bid price is higher than Spot price, then you can provision it. When it goes lower, instance is terminated. Useful for applications who have flexible start / stop times
- - [Exam Tip] If AWS terminates instance, you are not charged for partial hour. If you terminate, you will be charged for the hour.
- - Applications that are feasible only at very low compute prices. E.g. pharma simulations
- - Applications with urgent computing capacity
- - Dedicated physical machines – pay by hour.
- - Massive discount for reserved instances over a long period of time – upto 70% for 3 years.
- - Useful for regulatory requirements
- - Certain licensing agreements prevent usage on virtual machine / multi-tenancy deployments.
+     - Bid your price for compute. When bid price is higher than Spot price, then you can provision it. When it goes lower, instance is terminated. Useful for applications who have flexible start/stop times
+     - [Exam Tip] If AWS terminates instance, you are not charged for partial hour. If you terminate, you will be charged for the hour.
+     - Applications that are feasible only at very low compute prices. E.g. pharma simulations
+     - Applications with urgent computing capacity
+ - Dedicated Hosts- physical machines – pay by hour.
+     - Massive discount for reserved instances over a long period of time – upto 70% for 3 years.
+     - Useful for regulatory requirements
+     - Certain licensing agreements prevent usage on virtual machine / multi-tenancy deployments.
 
 ### EC2 Instance Types
 
