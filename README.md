@@ -549,64 +549,37 @@ IAM consists of the following
 |9|P2|Graphics / General Purpose GPU[Parallel Processing]|Machine Learning / Bit Coin Mining.| |
 |10|X1|Memory Optimized|SAP HANA / Apache Spark| - |
 
-
-Acronym – **DIRT MCG FPX*  - 	
-
+Acronym – *DIRT MCG FPX*  -
 *D – Density , I  - IOPS , R – RAM , T – cheap T2, M – Main Choice ( default) – Apps, C – Compute,  G – Graphics, F – FPGA , P – Graphics – Pics – Parallel Processing , X – Extreme Memory*  - *
-
 Use M3 for general purpose instances – balanced compute, memory and network resources
-
 [Exam Tip] You will be asked to provide which instance type to use for a given scenario. Usually 3 options are fictitious.
-
 EC2 Key Pairs are region specific
+  ![EC2 Instances Type](ec2_instance_type.jpg)
 
 ## EBS
-
 - Block based storage
-
 - You can install OS, Database on it, unlike S3
-
 - Placed in specific AZ. Automatically replicated within the AZ to protect from failure.
-
-- [Exam Tips]*  - EBS Volume Types**
-
+- *[Exam Tips]*  - EBS Volume Types
 SSD Drives
  - (root volume) General Purpose SSD – up to 10,000 IOPS. 3 IOPS per GB. Balances price and performance. You can burst upto 3000 IOPS for 1GB
-
 - (root volume) Provisioned SSD – when you need more than 10,000 IOPS. Large RDBMS DBs and NoSQL DBs. Up to 20000 IOPS now
-
 Magnetic Drives
-
 - HDD, Throughput Optimized– ST1 – Required for data written in sequence. Big Data, DWH, Log processing. Cannot be used as boot volumes
-
 - HDD, Cold– SC1 – Data that isn’t frequently accessed. E.g. File Server. Cannot be used as boot volume
-
 - (root volume) HDD, Magnetic (Standard) – *Cheapest bootable EBS volume type*. Used for apps where data is less frequently accessed and low cost is important.
-
 - You cannot mount 1 EBS volume to multiple EC2 Instances. Use EFS instead.
-
 - EBS Root Volumes can be encrypted on custom AMIs only. Not on the default available AMIs. To encrypt root volumes, create a new AMI and encrypt root volume. You can also encrypt using 3rd party software like Bit Locker. Additional volumes attached to EC2 instance can be encrypted.
-
 - EC2 – 1 subnet equals 1 Availability Zone.
-
 - Default VPC & Security group is created in when you create your account.
-
 - Default CloudWatch monitoring – every 5 mins. Can enabled advanced monitoring to check at interval of each minute.
-
 - Volume – Virtual Hard Disk
-
 - Tag everything on AWS
-
 - Default Linux EC2 username is ec2-user
-
 - Default Windows EC2 username is Administrator
-
 - Termination protection is turned off by default. You need to turn it on.
-
 - When instance is terminated, root volume is deleted. You can turn if off.
-
 - System Status Check – Overall health of hosting infrastructure. If they arise, Terminate instance and recreate
-
 - Instance Status Check – Health of instance. If they arise, reboot the instance.
 
 ## EC2 Security Groups
