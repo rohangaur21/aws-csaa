@@ -350,14 +350,19 @@ S3 maintains **_Read After Write_** consistency for PUTS of new objects. Meaning
 
 When performing overwrite PUTS and DELETES, these updated and/or deleted objects can take time to propagate because, also known as **_Eventual Consistency_**. These type of updates are known as **_Atomic_** - fetching these resources could be old or new.
 
-### S3
+### S3 Basics
   - S3-Simple Storage Service.
-  - Data is spread across multiple devices.
-  - Object-based storage.
+  - Data is spread across multiple devices (Files are stored in Buckets - folders).
+  - Object-based and unlimited storage.
   - Files can be from 0 Bytes to 5 TB.
-  - Unlimited Storage.
-  - Files are stored in Buckets (folders).
-
+  - Built for 99.99% availability for the S3 platform
+  - Amazon guarantee 99.9% availability - always available
+  - Amazon guarantees 99.99999999999% (11, 9’s) durability for S3 information
+  - Tiered storage
+  - Lifecycle management
+  - Versioning
+  - Encryption
+  - Secure data using Access Control Lists bucket policies.
 ### S3 Object - Key, Value Store
 - Key - Name of object to be stored
 - Value - Data being stored - made up of a sequence of bytes
@@ -366,11 +371,13 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
 - Subresource
     - Access Control Lists
     - Torrents
-
-
-
-### S3 Object Storage Classes
-  - S3 has Tiered Storage Available as below:
+### S3 Storage Tiers
+- **S3 (Standard)**
+  	- 99.99% availability, 99.(11 9’s )
+  	- Durable, reliable - stored redundantly across multiple devices in multiple facilities and is designed to sustain the loss of 2 facilities concurrently
+- **S3 IA (Infrequent Access)**
+  	- Used for data that is accessed less frequently but requires rapid access when needed
+  	- Lower fee than S3 but, are charged a retrieval fee
     1. S3-Standard - Durability of 99.999999999% (remember 11x9s) and availability of 99.99%. Designed to sustain loss of 2 facilities concurrently.
     2. S3-IA (Infrequently Accessed) - Less frequently, but requires rapid access when needed. Lower fee than S3, but charged a retrieval free.
     3. S3 One Zone - IA - Lower cost option for S3-IA with no multiple availability zone.
