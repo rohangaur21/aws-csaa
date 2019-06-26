@@ -479,13 +479,19 @@ You have the ability to make a bucket private but all certain objects in that bu
 - [https://aws.amazon.com/glacier/faqs/](https://aws.amazon.com/glacier/faqs/)
 
 ## CloudFront CDN Overview
+## CloudFront
+CloudFront can be used to deliver your entire website, including dynamic content, static, streaming and interactive content using a global network of edge locations.
+
+Requests for your content are automically routed to the nearest Edge Location, so content is delivered with the best possible performance.
+
+CloudFront is optimized to work with other Amazon Web Services like S3, EC2, Elastic Load Balancing and Route 53. CloudFront also works seamlessly with any non-AWS origin server which stores the original,definitive versions of your files.
 ### Important terms
   - CDN – collection of distributed servers where the content is served to users based on the user’s location and the location of content origin.
   - Edge location – location where content will be cached. Different from AWS Region / AZ
   - Origin – Can be S3 Bucket, an EC2 Instance, an Elastic Load Balancer or Route53
   - Distribution – is the name given to CDN collection which consists of Edge locations. There are two types of distribution:
-    1. Web Distribution – Typically used for websites & web content only.
-    2. RTMP – Used for Media Streaming. Adobe Flash media server’s protocol – video streaming.
+    1. **Web Distribution** – Typically used for websites & web content only.
+    2. **RTMP** – Used for Media Streaming. Adobe Flash media server’s protocol – video streaming.
   - First request is slow as it comes from source origin. Subsequent requests improve speed as they are cached in nearest edge location and routed there until TTL expires.
   - CloudFront also works with non AWS origin which can be on premise as well. .
   - Edge locations are for read and write as well. Objects PUT on edge location are sent to origin
@@ -506,6 +512,9 @@ You have the ability to make a bucket private but all certain objects in that bu
   - Invalidating removes objects from CloudFront. It can be forced to remove from Cache – obviously costs.
   - You can force users to get content via CloudFront after removing read access to S3 bucket.
   - You can also upload content to CloudFront.
+### Links
+- [https://aws.amazon.com/cloudfront/](https://aws.amazon.com/cloudfront/)
+- [https://aws.amazon.com/cloudfront/details/](https://aws.amazon.com/cloudfront/details/)
 
 ## Snowball
   Next version of Import / Export Gateway
