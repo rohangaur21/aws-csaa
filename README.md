@@ -402,7 +402,7 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
 - Data transfer pricing
 - Transfer Acceleration
 - Cross region replication pricing.
-- ![S3 Comparison](s3_comparison.jpg)
+ ![S3 Comparison](s3_comparison.jpg)
 
 ### S3 Buckets
   - S3 Namespace is global. Region independent. Universal Namespace.
@@ -411,7 +411,7 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
   - A bucket name in any region should only contain lower case characters. It has to be DNS Compliant
   - Object versioning - Different versions of the same object in a bucket.
   - Only Static website can be hosted. Auto scaling, Load Balancing etc. all managed automatically.
-  - You can tag buckets (or any AWS resoruce) to track costs. Tags consist of keys and (optional) value pairs.
+  - You can tag buckets (or any AWS resource) to track costs. Tags consist of keys and (optional) value pairs.
   - Lifecycle management of objects can be set. e.g. move to Glacier after 30 days
   - Every bucket created, object uploaded is private by default.
   - Object Permissions – Access to Object ACLs
@@ -421,6 +421,11 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
   - Individual Amazon S3 objects can range in size from a minimum of **0 bytes** to a maximum of **5 terabytes**. The largest object that can be uploaded in a single PUT is **5 gigabytes**. For objects larger than **100 megabytes**, customers should consider using the Multipart Upload capability.
 
 ### S3 Security & Encryption  
+By default all newly created buckets are **PRIVATE**. You need to manually change permissions to access resources.
+
+You can set policies and permissions using either Access Control Lists or Bucket Policies.
+
+You have the ability to make a bucket private but all certain objects in that bucket to be public.
 #### Security  
   - By default all newly created buckets are Private  
   - Control Access to buckets using  
@@ -428,15 +433,16 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
       - Access Control Lists – up to individual objects.  
   - S3 buckets can log all access requests to another S3 bucket even another AWS account.  
 #### Encryption  
-  - In Transit : Secured using SSL/TLS  
-  - Data at rest
-    - Server Side  
-      1. S3 Managed Keys – SSE – S3  
-      2. AWS KMS Managed Keys – SSE – KMS – Envelop Key. Provides audit trail  
-      3. SSE using customer provided keys. Key Management is responsibility of user. SSE-C
-    - Client Side
-      Encrypt data at client side and then upload to S3.
-
+**4** different methods and **2** types of encryption for S3 buckets.
+1. **In Transit** - from client uploading to S3 bucket.
+	- Using SSL/TLS encryption. HTTPS
+2. **At Rest**
+	- Server Side Encryption
+		- **SSE-S3** - S3 Managed key. Each object is encrypted with a unique key employing strong multi-factor encryption with rotating master key (AES-256 encryption).
+		- **SSE KMS** - AWS Key Management Service, Managed Keys. Similar to SSE-S3. Separate permissions for envelope key - key that protects data encryption key. Audit trail - when keys were used and who were using.
+		- **SSE-C** - Server Side Encryption with Customer Provided Keys. You manage encryption key.
+	- Client Side Encryption
+		- Encrypt data on client side and upload to S3
 ### S3 Versioning
   - Once versioning is turned on it cannot be removed. It can only be suspended.
   - To remove versioning, you have to create a new bucket and transfer all files from old to new
@@ -446,7 +452,6 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
   - Object deleted can be restored – Delete the Delete marker.
   - Versioning is a good backup tool.
   - For versioning. MFA can be setup for Delete capability for object / bucket – Complicated setup.
-
 ### Cross Region Replication
   - To allow for cross region replication, the both source and target buckets must have versioning enabled.
   - Regions must be unique.
@@ -455,19 +460,23 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
   - Delete markers are not replicated.
   - Deleting individual versions or delete markers will not be replicated.
   - OLD: Transitive replications do not work. E.g. if you setup bucket C to replicate content from bucket B which replicates content from bucket A – Changes made to bucket A will not get propagated to C. You will need to manually upload content to bucket B to trigger replication to C.
-
 ### Lifecycle Management
   - Use lifecycle rules to manage objects.
   - We can configure  scope, transition and expiration of the object in lifecycle rules.
   - Objects stored in Glacier incur minimum 90 day storage cost.
   - Lifecycle management can be used in conjunction with versioning
   - Can be applied to current versions and previous versions.
-
 ### Transfer Acceleration
   - Uploads first to edge location, then from edge location to main S3 bucket directly.
   - S3 Transfer Acceleration Tool can be used to compare the speed of the transfer (Edge Transfer Vs S3 directly).
   - It utilizes the CloudFront Edge Network to accelerate uploads to S3. Instead of uploading directly to S3, you can use a distinct URL to upload directly to an edge location which will then transfer to S3 using Amazon’s backbone network.
   - The farther you are from S3 bucket region the higher is the improvement you can observe using S3 Transfer Acceleration. High cost for usage than standard S3 transfer rates.
+### Links
+- [https://aws.amazon.com/s3/](https://aws.amazon.com/s3/)
+- [https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html)
+- [https://aws.amazon.com/s3/faqs/](https://aws.amazon.com/s3/faqs/)
+- [https://aws.amazon.com/s3/storage-classes/](https://aws.amazon.com/s3/storage-classes/)
+- [https://aws.amazon.com/glacier/faqs/](https://aws.amazon.com/glacier/faqs/)
 
 ## CloudFront CDN Overview
 ### Important terms
