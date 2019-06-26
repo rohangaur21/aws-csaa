@@ -378,14 +378,23 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
 - **S3 IA (Infrequent Access)**
   	- Used for data that is accessed less frequently but requires rapid access when needed
   	- Lower fee than S3 but, are charged a retrieval fee
-    1. S3-Standard - Durability of 99.999999999% (remember 11x9s) and availability of 99.99%. Designed to sustain loss of 2 facilities concurrently.
-    2. S3-IA (Infrequently Accessed) - Less frequently, but requires rapid access when needed. Lower fee than S3, but charged a retrieval free.
-    3. S3 One Zone - IA - Lower cost option for S3-IA with no multiple availability zone.
-    4. S3-Intelligent Tiering - Designed to optimize costs. Automatically chooses cost-effective access tier with performance impact or operational overhead.
-    5. S3-Glacier - Low cost storage class for data archiving. Retrieval times configure from mins to hours.
-    6. S3-Glacier Deep Archive - Used where retrieval time of 12 hours is acceptable.
-  - OLD- S3-RRS (Reduced Redundancy Storage) - Durability and availability of 99.99%. Use when you don’t care if data is occasionally lost and can easily be re-created.
-  - OLD- Glacier - For archival only. Takes 3 - 5 hours to restore files. Durability of 99.999999999%.
+- **S3 One Zone IA (Infrequent Access)**
+    - Lower cost option for S3-IA with no multiple availability zone.
+- **S3 Intelligent Tiering**
+    - Designed to optimize costs.
+    - Automatically chooses cost-effective access tier with performance impact or operational overhead.
+- **S3 Glacier**
+   - Low cost storage class for data archiving. Retrieval times configure from mins to hours.
+- **S3 Glacier Deep Archive**
+    -  Used where retrieval time of 12 hours is acceptable.
+- **Previous in 2018**
+- *S3 Reduces Redundancy Storage (RRS)*
+	 - Designed to provide 99.99% durability and 99.99% availability of objects over a given year.
+- *Glacier (Separate product from S3)*
+  	- Very cost effective but used for data archival only
+  	- Generally takes 3 - 5 hours to restore from glacier
+      - Stores data for as low as .01G a month
+      - Optimized for data that is infrequently accessed and for which retrieval times of 3 to 5 hours are suitable (slow retrieval).
   ![S3 Comparison](s3_comparison.jpg)
   - Charge on S3 are based on following ways:- storage, requests, storage management pricing, data transfer pricing, transfer acceleration, cross region replication pricing.
 
