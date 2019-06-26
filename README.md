@@ -332,9 +332,7 @@ IAM consists of the following
   - Using Access Key ID and Secret Access Key – can be used only via accessing programmatically. Akin to username and password used while accessing the console
 
 # AWS Object Storage & CDN – S3, Glacier and CloudFront
-
 ## S3 101
-
 ### S3
   - S3-Simple Storage Service.
   - Data is spread across multiple devices.
@@ -367,7 +365,6 @@ IAM consists of the following
   - OLD- Glacier - For archival only. Takes 3 - 5 hours to restore files. Durability of 99.999999999%.
   ![S3 Comparison](s3_comparison.jpg)
   - Charge on S3 are based on following ways:- storage, requests, storage management pricing, data transfer pricing, transfer acceleration, cross region replication pricing.
-
 
 ### S3 Buckets
   - S3 Namespace is global. Region independent. Universal Namespace.
@@ -402,7 +399,6 @@ IAM consists of the following
     - Client Side
       Encrypt data at client side and then upload to S3.
 
-
 ### S3 Versioning
   - Once versioning is turned on it cannot be removed. It can only be suspended.
   - To remove versioning, you have to create a new bucket and transfer all files from old to new
@@ -421,7 +417,6 @@ IAM consists of the following
   - Delete markers are not replicated.
   - Deleting individual versions or delete markers will not be replicated.
   - OLD: Transitive replications do not work. E.g. if you setup bucket C to replicate content from bucket B which replicates content from bucket A – Changes made to bucket A will not get propagated to C. You will need to manually upload content to bucket B to trigger replication to C.
-
 
 ### Lifecycle Management
   - Use lifecycle rules to manage objects.
