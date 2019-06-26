@@ -536,6 +536,19 @@ IAM consists of the following
 
 ### EC2 Instance Types
 - No need to memorize for associate exams
+|Sr. No| Family| Specialty| Use Case| Type|
+| ------------- |:-------------:| -----:|-----:|-----:|
+|1 |D2 |Dense Storage | File Servers / DWH / Hadoop | Storage Optimized|
+|2| R4. R3| Memory Optimized|Memory Intensive / DBs|Memory Optimized|
+|3|M4. M3|General Purpose|Application Servers|General Purpose|
+|4|C4, C3|Compute Optimized|CPU Intensive Apps, DBs|Compute O|
+|5|G2|Graphics Intensive|Video Encoding / 3D Application Streaming||
+|6|I2|High speed storage (IOPS)|NoSQL DBs, DWH||
+|7|F1|Field Programmable Gate Array|Hardware acceleration of Code||
+|8|T2|Lowest Cost, General Purpose|Web Servers/ Small DBs| General Purpose|
+|9|P2|Graphics / General Purpose GPU[Parallel Processing]|Machine Learning / Bit Coin Mining.| |
+|10|X1|Memory Optimized|SAP HANA / Apache Spark| - |
+
 | No. | Family | Specialty | Use Cases |
 | ------------- |:-------------:| -----:|-----:|
 | 1 | F1 | Field Programmable Gate Array | Genomics research, financial analytics, real-time video processing, big data etc |
@@ -553,6 +566,21 @@ IAM consists of the following
 | 13 | A1 | Arm-based workloads | Scale-out workloads such as web servers |
 | 14 | U-6tb1 | Bare Metal | Bare metal capabilities that eliminate virtualization overhead |
 
+| No. | Family | Specialty | Use Cases |
+| 1 | F1 | Field Programmable Gate Array | Genomics research, financial analytics, real-time video processing, big data etc |
+| 2 | I3 | High Speed Storage |	NoSQL DBs, Datawarehousing |
+| 3 | G3 | Graphics Intensive	| Video Encoding / 3D Application Streaming |
+| 4 | H1 | High Disk Throughput | MapReduce-based workloads, distributed file systems such as HDFS and MapR-FS |
+| 5 | T3 | Lowest Cost, General Purpose | Web Servers/ Small DBs |
+| 6 | D2 | Dense Storage | File Servers / Datawarehousing / Hadoop |
+| 7 | R5 | Memory Optimized | Memory Intensive Apps / DBs |
+| 8 | M5 |	General Purpose	| Application Servers |
+| 9 | C5 | Compute Optimized | CPU Intensive Apps / DBs |
+| 10 | P3 |	Graphics / General Purpose GPU	| Machine Learning, Bit Coin Mining etc |
+| 11 | X1	| Memory Optimized	| SAP HANA / Apache Spark |
+| 12 | Z1D | High compute capacity and a high memory foot print | Ideal for electronic design automation (EDA) and certain relational databases workloads with high per-core licensing costs. |
+| 13 | A1 | Arm-based workloads | Scale-out workloads such as web servers |
+| 14 | U-6tb1 | Bare Metal | Bare metal capabilities that eliminate virtualization overhead |
 Acronym – *DIRT MCG FPX*  -
 *D – Density , I  - IOPS , R – RAM , T – cheap T2, M – Main Choice ( default) – Apps, C – Compute,  G – Graphics, F – FPGA , P – Graphics – Pics – Parallel Processing , X – Extreme Memory*  - *
 - Use M3 for general purpose instances – balanced compute, memory and network resources
