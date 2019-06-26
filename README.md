@@ -395,8 +395,14 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
       	- Generally takes 3 - 5 hours to restore from glacier
           - Stores data for as low as .01G a month
           - Optimized for data that is infrequently accessed and for which retrieval times of 3 to 5 hours are suitable (slow retrieval).
+### S3 Charges
+- Storage
+- Requests
+- Storage Management Pricing
+- Data transfer pricing
+- Transfer Acceleration
+- Cross region replication pricing.
 - ![S3 Comparison](s3_comparison.jpg)
-  - Charge on S3 are based on following ways:- storage, requests, storage management pricing, data transfer pricing, transfer acceleration, cross region replication pricing.
 
 ### S3 Buckets
   - S3 Namespace is global. Region independent. Universal Namespace.
