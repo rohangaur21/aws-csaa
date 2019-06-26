@@ -509,14 +509,14 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
   - Max 100 S3 buckets per account by default.
   - Individual Amazon S3 objects can range in size from a minimum of **0 bytes** to a maximum of **5 terabytes**. The largest object that can be uploaded in a single PUT is **5 gigabytes**. For objects larger than **100 megabytes**, customers should consider using the Multipart Upload capability.
 
-## S3 Security & Encryption  
-### Security  
+### S3 Security & Encryption  
+#### Security  
   - By default all newly created buckets are Private  
   - Control Access to buckets using  
       - Bucket Policies – bucket wide.  
       - Access Control Lists – up to individual objects.  
   - S3 buckets can log all access requests to another S3 bucket even another AWS account.  
-### Encryption  
+#### Encryption  
   - In Transit : Secured using SSL/TLS  
   - Data at rest
     - Server Side  
@@ -537,7 +537,7 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
   - Versioning is a good backup tool.
   - For versioning. MFA can be setup for Delete capability for object / bucket – Complicated setup.
 
-## Cross Region Replication
+### Cross Region Replication
   - To allow for cross region replication, the both source and target buckets must have versioning enabled.
   - Regions must be unique.
   - Files in an existing bucket are not replicated automatically.
@@ -547,14 +547,14 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
   - OLD: Transitive replications do not work. E.g. if you setup bucket C to replicate content from bucket B which replicates content from bucket A – Changes made to bucket A will not get propagated to C. You will need to manually upload content to bucket B to trigger replication to C.
 
 
-## Lifecycle Management
+### Lifecycle Management
   - Use lifecycle rules to manage objects.
   - We can configure  scope, transition and expiration of the object in lifecycle rules.
   - Objects stored in Glacier incur minimum 90 day storage cost.
   - Lifecycle management can be used in conjunction with versioning
   - Can be applied to current versions and previous versions.
 
-## Transfer Acceleration
+### Transfer Acceleration
   - Uploads first to edge location, then from edge location to main S3 bucket directly.
   - S3 Transfer Acceleration Tool can be used to compare the speed of the transfer (Edge Transfer Vs S3 directly).
   - It utilizes the CloudFront Edge Network to accelerate uploads to S3. Instead of uploading directly to S3, you can use a distinct URL to upload directly to an edge location which will then transfer to S3 using Amazon’s backbone network.
