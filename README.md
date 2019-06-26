@@ -271,7 +271,7 @@ The exam is approximately 60 questions in 80 minutes. Pass marks not advertised 
       - Elastic Transcoder - convert video into multiple formats to suit all devices.
  - Mobile Service
       - Mobile Hub - for mobile apps - separate console.
-      - Cognito - identity provider for mobile applications. Social identity providers – Gmail, Facebook OAuth providers.  
+      - Cognito - identity provider for mobile applications. Social identity providers – Gmail, Facebook OAuth providers.  
       - Device Farm - testing your apps across multitude of devices
       - Mobile Analytics – Collect application usage data in a cost-effective way.
       - Pinpoint - GA for mobile apps
