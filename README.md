@@ -564,35 +564,33 @@ CloudFront is optimized to work with other Amazon Web Services like S3, EC2, Ela
 # EC2 – The Backbone of AWS
 
 ## EC2 101
- - Elastic Compute Cloud
- - Provides resizable compute capacity in cloud ( scale up and down)
- - Helps developers failure resilient systems and isolate them
+AWS EC2 is a web service that provides re-sizable compute capacity in the cloud. EC2 reduces the time required to obtain and boot new server instances to minutes, allowing you to quickly scale capacity, both up and down, as your computing requirements change.
 
+EC2 has changed the economics of cloud computing by allowing you to pay only for capacity that your actually use. EC2 provides developers the tools to build failure resistant applications and isolate themselves from common failure scenarios.
 ### EC2 Pricing
- - On demand.
+ - **On demand**.
      - Pay per hour of usage.
      - Flexible without any up-front payment or long term commitment.
      - Applications with short term, spiky usage patterns or unpredictable workloads that cannot be interrupted.
      - New apps on AWS
- - Reserved pricing
+ - **Reserved pricing**
      - Reserve capacity over significant period of time. Significant discount.
      - Applications with steady or predictable usage over a period of time. Reserved capacity required.
      - Further discount if upfront payment
      - Contract Terms are 1 Year or 3 Years terms,
      - Types of reserved pricing:
-        1.  Standard Reserved Instances - Upto 75% discount - more use discount on paying upfront and longer contracts
-        2. Convertible Reserved instances - Upto 54% discount - allow to change between instances type.
-        3. Scheduled Reserved instance - Allow for launch for time window
- - Spot pricing –
+        1.  *Standard Reserved Instances* - Upto 75% discount - more use discount on paying upfront and longer contracts
+        2. *Convertible Reserved instances* - Upto 54% discount - allow to change between instances type.
+        3. *Scheduled Reserved instance* - Allow for launch for time window
+ - **Spot pricing** –
      - Bid your price for compute. When bid price is higher than Spot price, then you can provision it. When it goes lower, instance is terminated. Useful for applications who have flexible start/stop times
      - [Exam Tip] If AWS terminates instance, you are not charged for partial hour. If you terminate, you will be charged for the hour.
      - Applications that are feasible only at very low compute prices. E.g. pharma simulations
      - Applications with urgent computing capacity
- - Dedicated Hosts- physical machines – pay by hour.
+ - **Dedicated Hosts**- physical machines – pay by hour.
      - Massive discount for reserved instances over a long period of time – upto 70% for 3 years.
      - Useful for regulatory requirements
      - Certain licensing agreements prevent usage on virtual machine / multi-tenancy deployments.
-
 ### EC2 Instance Types
 - No need to memorize for associate exams
 
@@ -634,14 +632,14 @@ CloudFront is optimized to work with other Amazon Web Services like S3, EC2, Ela
 - EC2 Key Pairs are region specific
 
 ## EBS
-- Block based storage
-- You can install OS, Database on it, unlike S3
-- Placed in specific AZ. Automatically replicated within the AZ to protect from failure.
-- *[Exam Tips]*  - EBS Volume Types
-SSD Drives
+Amazon EBS allows you to create storage volumes and attach them Amazon EC2 instances. Once attached, you can create a file system on top of theses volumes, run a database, or use them in any other way you would use a block device. EBS volumes are placed in a specific Availability Zone, where they are automatically replicated to protect you from the failure of a single component.
+
+TLDR; A disk in the cloud that you attach to your EC2 instances
+###- EBS Volume Types
+**SSD Drives**
  - (root volume) General Purpose SSD – up to 10,000 IOPS. 3 IOPS per GB. Balances price and performance. You can burst upto 3000 IOPS for 1GB
 - (root volume) Provisioned SSD – when you need more than 10,000 IOPS. Large RDBMS DBs and NoSQL DBs. Up to 20000 IOPS now
-Magnetic Drives
+**Magnetic Drives**
 - HDD, Throughput Optimized– ST1 – Required for data written in sequence. Big Data, DWH, Log processing. Cannot be used as boot volumes
 - HDD, Cold– SC1 – Data that isn’t frequently accessed. E.g. File Server. Cannot be used as boot volume
 - (root volume) HDD, Magnetic (Standard) – *Cheapest bootable EBS volume type*. Used for apps where data is less frequently accessed and low cost is important.
