@@ -538,7 +538,7 @@ IAM consists of the following
 - No need to memorize for associate exams
 
 | No. | Family | Specialty | Use Cases |
-| ------------- |:-------------:| -----:|-----:|
+| ------------- |:-------------:| :-----|:-----|
 | 1 | F1 | Field Programmable Gate Array | Genomics research, financial analytics, real-time video processing, big data etc |
 | 2 | I3 | High Speed Storage |	NoSQL DBs, Datawarehousing |
 | 3 | G3 | Graphics Intensive	| Video Encoding / 3D Application Streaming |
@@ -559,7 +559,6 @@ Acronym – *DIRT MCG FPX*  -
 - Use M3 for general purpose instances – balanced compute, memory and network resources
 - [Exam Tip] You will be asked to provide which instance type to use for a given scenario. Usually 3 options are fictitious.
 - EC2 Key Pairs are region specific
-  ![EC2 Instances Type](ec2_instance_type.jpg)
 
 ## EBS
 - Block based storage
