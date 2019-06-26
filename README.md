@@ -294,7 +294,7 @@ The exam is approximately 60 questions in 80 minutes. Pass marks not advertised 
       - SES – send email via AWS
 
 # Identity & Access Management
-
+Allow you to manage users and their level of access management to the AWS console. Tested for exam and co. aws account in real life. IAM is globally available and not specified to region
 ## IAM 101
  - Configure who uses AWS and their level of access to the AWS Console.
  - Centralized control over AWS Account
@@ -306,14 +306,12 @@ The exam is approximately 60 questions in 80 minutes. Pass marks not advertised 
  - Setup password rotation policy
  - Integration with other AWS services.
  - Supports PCI-DSS compliance
-
 ### Critical Terms
 IAM consists of the following
  - Users – End users / people.
  - Groups – Users having one set of permissions.
  - Roles – Create roles and assign them to AWS resources.
  - Policies – Document (JSON format) that defines one or more permissions – assign to user or groups
-
 ### IAM Features
  - IAM is a global service. It is not region specific
  - Root account is the email address you use to sign up for AWS
@@ -330,9 +328,22 @@ IAM consists of the following
   3. AWS CLI - Using Access Key ID and Secret Access Key
   4. AWS SDK – various programming languages supported.
   - Using Access Key ID and Secret Access Key – can be used only via accessing programmatically. Akin to username and password used while accessing the console
+### Links
+- [https://aws.amazon.com/iam/faqs/](https://aws.amazon.com/iam/faqs/)
+- [https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
 
 # AWS Object Storage & CDN – S3, Glacier and CloudFront
 ## S3 101
+S3 is a safe place to store your static files being one the oldest services of AWS. It is an object based storage where your data is spread across multiple devices.
+
+S3 allows you to upload, where files can be from 0 bytes to 5TB. If an upload is successful, you will receive an HTTP status code of `200`.
+It is capable of unlimited storage. All files are stored into 'Buckets' which is basically an S3 term for folders.
+
+S3 uses a universal namespace meaning all names must be **_globally_** unique.
+
+_Example S3 URL:_
+**`https://s3-eu-west-1.amazonaws.com/[bucket-name]`**
+
 ### S3
   - S3-Simple Storage Service.
   - Data is spread across multiple devices.
