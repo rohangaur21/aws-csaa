@@ -742,9 +742,9 @@ The following are examples of problems that can cause instance status checks to 
 
 
 ## CloudWatch
- - Monitors 
-    -- 1) Compute - EC2 Instances, Autoscaling groups, Elastic Load Balancers, Route53 Health Checks. 
-    -- 2) Storage & Content Delivery - EBS Volumes, Storage Gateways, Cloudfront.
+ - Monitors -
+    1. Compute - EC2 Instances, Autoscaling groups, Elastic Load Balancers, Route53 Health Checks. 
+    2. Storage & Content Delivery - EBS Volumes, Storage Gateways, Cloudfront.
  - Default Metrics – Network, Disk , CPU and Status check ( Instance and System)
  - Memory – RAM is a custom metric
  - You can create custom dashboards all CloudWatch metrics.
