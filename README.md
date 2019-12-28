@@ -645,6 +645,7 @@ TLDR; A disk in the cloud that you attach to your EC2 instances
     - HDD, Throughput Optimized– ST1 – Required for data written in sequence. Big Data, DWH, Log processing. Cannot be used as boot volumes
     - HDD, Cold– SC1 – Data that isn’t frequently accessed. E.g. File Server. Cannot be used as boot volume
     - (root volume) HDD, Magnetic (Standard) – *Cheapest bootable EBS volume type*. Used for apps where data is less frequently accessed and low cost is important.
+    
 - You cannot mount 1 EBS volume to multiple EC2 Instances. Use EFS instead.
 - EBS Root Volumes can be encrypted on custom AMIs only. Not on the default available AMIs. To encrypt root volumes, create a new AMI and encrypt root volume. You can also encrypt using 3rd party software like Bit Locker. Additional volumes attached to EC2 instance can be encrypted.
 - EC2 – 1 subnet equals 1 Availability Zone.
@@ -658,6 +659,7 @@ TLDR; A disk in the cloud that you attach to your EC2 instances
 - When instance is terminated, root volume is deleted. You can turn if off.
 - System Status Check – Overall health of hosting infrastructure. If they arise, Terminate instance and recreate
 - Instance Status Check – Health of instance. If they arise, reboot the instance.
+  ![ebs_volume_types](ebs.png)
 
 ## EC2 Security Groups
  - A security group is a virtual firewall.
