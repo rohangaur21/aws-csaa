@@ -706,6 +706,7 @@ TLDR; A disk in the cloud that you attach to your EC2 instances
  - You can’t share encrypted snapshots as the encryption key is tied to your account.
 
 ## EBS backed v/s Instance store
+ - Instance Store Volumes are sometimes called Ephemeral Storage.
  - You can reboot or terminate instance store backed EC2 VMs
  - You can start , stop , reboot or terminate EBS backed EC2 VMs
  - EC2 instance on instance store is lost if host hypervisor fails. Not so with EBS backed instances.
