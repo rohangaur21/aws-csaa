@@ -631,6 +631,19 @@ EC2 has changed the economics of cloud computing by allowing you to pay only for
 - [Exam Tip] You will be asked to provide which instance type to use for a given scenario. Usually 3 options are fictitious.
 - EC2 Key Pairs are region specific
 
+## EC2 Security Groups
+ - A security group is a virtual firewall.
+ - First line of defense. Network ACLs are second line.
+ - 1 instance can have multiple security groups. As each security group only "allows" inbound traffic, there will never be a conflict on security group rules.
+ - Security group changes are applied immediately.
+ - Security groups are "stateful". Rules added as inbound rules – automatic outbound rules are added. Response back on the same channel. NACLs are stateless.
+ - All inbound traffic is blocked by default. You have to allow specific inbound rules for protocols
+ - All outbound traffic is allowed by default.
+ - Only allow rules, no deny rules exist. Use NACLs to deny specific IPs
+ - Any number of EC2 instances in a security group.
+ - EC2 instances in the default security group can communicate with each other.
+ - Multiple security groups can be attached to an instance.
+
 ## EBS
 Amazon EBS allows you to create storage volumes and attach them Amazon EC2 instances. Once attached, you can create a file system on top of theses volumes, run a database, or use them in any other way you would use a block device. EBS volumes are placed in a specific Availability Zone, where they are automatically replicated to protect you from the failure of a single component.
 
@@ -645,7 +658,7 @@ TLDR; A disk in the cloud that you attach to your EC2 instances
     - HDD, Throughput Optimized– ST1 – Required for data written in sequence. Big Data, DWH, Log processing. Cannot be used as boot volumes
     - HDD, Cold– SC1 – Data that isn’t frequently accessed. E.g. File Server. Cannot be used as boot volume
     - (root volume) HDD, Magnetic (Standard) – *Cheapest bootable EBS volume type*. Used for apps where data is less frequently accessed and low cost is important.
-    
+
 - You cannot mount 1 EBS volume to multiple EC2 Instances. Use EFS instead.
 - EBS Root Volumes can be encrypted on custom AMIs only. Not on the default available AMIs. To encrypt root volumes, create a new AMI and encrypt root volume. You can also encrypt using 3rd party software like Bit Locker. Additional volumes attached to EC2 instance can be encrypted.
 - EC2 – 1 subnet equals 1 Availability Zone.
@@ -660,19 +673,6 @@ TLDR; A disk in the cloud that you attach to your EC2 instances
 - System Status Check – Overall health of hosting infrastructure. If they arise, Terminate instance and recreate
 - Instance Status Check – Health of instance. If they arise, reboot the instance.
   ![ebs_volume_types](ebs.png)
-
-## EC2 Security Groups
- - A security group is a virtual firewall.
- - First line of defense. Network ACLs are second line.
- - 1 instance can have multiple security groups. As each security group only "allows" inbound traffic, there will never be a conflict on security group rules.
- - Security group changes are applied immediately.
- - Security groups are "stateful". Rules added as inbound rules – automatic outbound rules are added. Response back on the same channel. NACLs are stateless.
- - All inbound traffic is blocked by default. You have to allow specific inbound rules for protocols
- - All outbound traffic is allowed by default.
- - Only allow rules, no deny rules exist. Use NACLs to deny specific IPs
- - Any number of EC2 instances in a security group.
- - EC2 instances in the default security group can communicate with each other.
- - Multiple security groups can be attached to an instance.
 
 ## Volumes and Snapshots
  - Volumes are virtual hard disks.
