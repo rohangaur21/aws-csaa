@@ -691,16 +691,14 @@ TLDR; A disk in the cloud that you attach to your EC2 instances
  - RAID 10 – Raid 0 + Raid 1
  - Use RAID Arrays when a single volume IOPs are not sufficient for your need. E.g. Database. Then you create RAID Array to meet IOPs requirements.
  - To take snapshot of RAID Array –
-
     1. Stop the application from writing to cache and  flush all cache to Disk
-
     2. Freeze the file system
-
     3. Umount the RAID Array
-
     4. Shutdown the EC2 instance
  - Snapshots of encrypted volumes are encrypted automatically.
+ - Volumes restored from encrypted snapshots are encrypted automatically.
  - You can copy snapshot to another region while encrypting it.
+ - You can encrypt root device volumes upon creation of EX2 instances.
  - Create Image from snapshot.
  - The EC2 instance thus created will have root volume encrypted.
  - You can’t share encrypted snapshots as the encryption key is tied to your account.
@@ -744,6 +742,9 @@ The following are examples of problems that can cause instance status checks to 
 
 
 ## CloudWatch
+ - Monitors 
+    -- 1) Compute - EC2 Instances, Autoscaling groups, Elastic Load Balancers, Route53 Health Checks. 
+    -- 2) Storage & Content Delivery - EBS Volumes, Storage Gateways, Cloudfront.
  - Default Metrics – Network, Disk , CPU and Status check ( Instance and System)
  - Memory – RAM is a custom metric
  - You can create custom dashboards all CloudWatch metrics.
